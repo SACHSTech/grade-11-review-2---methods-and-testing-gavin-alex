@@ -36,7 +36,7 @@ public class Utility {
 
     public static String alphaWord(String filenametxt) throws IOException {
         ArrayList<String> str = new ArrayList<>();
-        
+
         BufferedReader reader = new BufferedReader(new FileReader(filenametxt));
         String word = reader.readLine();
 
@@ -49,6 +49,16 @@ public class Utility {
         String alpha = str.get(0);
 
         return alpha;
+    }
+
+    public static int[] notAlone(int[] nums, int value) {
+        for (int i = 1; i < nums.length - 1; i++) {
+            if(nums[i] == value && nums[i - 1] != nums[i] && nums[i] != nums[i + 1]) {
+
+                nums[i] = Math.max(nums[i - 1], nums[i + 1]);
+            }
+        }
+        return nums;
     }
 
 }
