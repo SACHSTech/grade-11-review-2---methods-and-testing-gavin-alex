@@ -1,6 +1,9 @@
 package gr11review.part2;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Collections;
+
 
 public class Utility {
 
@@ -31,5 +34,21 @@ public class Utility {
         return false;
     }
 
+    public static String alphaWord(String filenametxt) throws IOException {
+        ArrayList<String> str = new ArrayList<>();
+        
+        BufferedReader reader = new BufferedReader(new FileReader(filenametxt));
+        String word = reader.readLine();
+
+        while (word != null) {
+            str.add(word);
+        }
+        reader.close();
+        Collections.sort(str);
+        
+        String alpha = str.get(0);
+
+        return alpha;
+    }
 
 }
