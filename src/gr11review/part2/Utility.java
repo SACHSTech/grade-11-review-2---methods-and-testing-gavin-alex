@@ -10,25 +10,28 @@ public class Utility {
 
     public static void main(String[] args)throws IOException {
 
-        System.out.println(xyzMiddle("AAxyzBB"));
-        System.out.println(xyzMiddle("AxyzBB"));
-        System.out.println(xyzMiddle("AxyzBBB"));
-
-        
+        seriesUp(3);
     
     }
 
 
+    /**
+     * Given a string, determine if 'xyz' is in the middle
+     * 
+     * @param str Given a string, determine if 'xyz' is in the middle
+     * @return true if 'xyz' is in the middle of the string, false otherwise
+     * @author A. Chan
+     */
     public static boolean xyzMiddle(String str) {
-        int middle = str.length()/2 - 1;
+        int intMiddle = str.length()/2 - 1;
 
-        // check right of middle
-        if (str.length() >= 3 && (str.substring(middle, middle + 3).equals("xyz"))) {
+        // check right of middle, if 'xyz' is found, return true
+        if (str.length() >= 3 && (str.substring(intMiddle, intMiddle + 3).equals("xyz"))) {
             return true;
         }
         
-        // check left of middle
-        if (str.length() % 2 == 0 && str.substring(middle - 1, middle + 2).equals("xyz")) {
+        // check left of middle, if 'xyz' is found, return true
+        if (str.length() % 2 == 0 && str.substring(intMiddle - 1, intMiddle + 2).equals("xyz")) {
             return true;
          }
 
@@ -36,42 +39,91 @@ public class Utility {
         return false;
     }
 
+    /**
+     * Sorts a text file with multiple words on separate lines, returns the word that is alphabetically first
+     * 
+     * @param filenametxt Text file location
+     * @return The word that is alphabetically first
+     * @author A. Chan
+     */
     public static String alphaWord(String filenametxt) throws IOException {
+
+        // create array list
         ArrayList<String> str = new ArrayList<>();
 
+        // read line of text file
         BufferedReader reader = new BufferedReader(new FileReader(filenametxt));
         String word = reader.readLine();
 
+        // add words to array list
         while (word != null) {
             str.add(word);
         }
         reader.close();
+
+        // sort the array
         Collections.sort(str);
+        
         
         String alpha = str.get(0);
 
+        // return the word that is alphabetically first (index 0)
         return alpha;
     }
 
+    /**
+     * Given an array, return a version where every instance of the given value which is alone is replaced by whichever value to its left or right is larger
+     * 
+     * @param nums Specified array
+     * @param value Value that is to be replaced
+     * @return value by replacing it with whichever value to its left or right is larger
+     * @author A. Chan
+     */
     public static int[] notAlone(int[] nums, int value) {
+
+        // loop through array
         for (int i = 1; i < nums.length - 1; i++) {
+            
+            // check if array index is equal to specified value, and that the values before and after are not the same value
             if(nums[i] == value && nums[i - 1] != nums[i] && nums[i] != nums[i + 1]) {
 
+                // replace array index with the greater of the two numbers
                 nums[i] = Math.max(nums[i - 1], nums[i + 1]);
             }
         }
+        // return array
         return nums;
     }
 
+    /**
+     * Creates an array with the pattern {1, 1, 2, 1, 2, 3, ... 1, 2, 3 .. n}
+     * 
+     * @param n Number that will be at the end of the pattern (1, 1, 2 ... 1, 2, 3 .. n)
+     * @return An array with the pattern {1, 1, 2, 1, 2, 3, ... 1, 2, 3 .. n}
+     * @author A. Chan
+     */
     public static int[] seriesUp(int n) {
 
+        // create new array
         int[] newArray = new int[n * (n + 1) / 2];
+
+        // set intCounter variable to 0
+        int intCounter = 0;
+
+        // outer loop, loop through numbers until n (specified num)
         for (int i = 1; i <= n; i++) {
+
+            // inner loop, iterate through loop until i (outer loop)
             for (int j = 1; j <= i; j++) {
-                newArray[i++] = j; 
+
+                // set index of array equal to j
+                newArray[intCounter++] = j; 
             }
-            
         }
+        System.out.println(java.util.Arrays.toString(newArray));
+
+        // return new array
         return newArray;
     }
+
 }
