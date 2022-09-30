@@ -13,6 +13,8 @@ public class Utility {
         System.out.println(xyzMiddle("AAxyzBB"));
         System.out.println(xyzMiddle("AxyzBB"));
         System.out.println(xyzMiddle("AxyzBBB"));
+
+        
     
     }
 
@@ -61,4 +63,15 @@ public class Utility {
         return nums;
     }
 
+    public static int[] seriesUp(int n) {
+
+        int[] newArray = new int[n * (n + 1) / 2];
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                newArray[i++] = j; 
+            }
+            
+        }
+        return newArray;
+    }
 }
