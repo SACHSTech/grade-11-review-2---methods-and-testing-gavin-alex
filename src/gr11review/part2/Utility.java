@@ -4,13 +4,15 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 
-
 public class Utility {
 
 
     public static void main(String[] args)throws IOException {
 
+        xyzMiddle("AAxyzBB");
         seriesUp(3);
+
+        
     
     }
 
@@ -64,10 +66,9 @@ public class Utility {
         // sort the array
         Collections.sort(str);
         
-        
+        // return the word that is alphabetically first (index 0)
         String alpha = str.get(0);
 
-        // return the word that is alphabetically first (index 0)
         return alpha;
     }
 
@@ -120,10 +121,37 @@ public class Utility {
                 newArray[intCounter++] = j; 
             }
         }
-        System.out.println(java.util.Arrays.toString(newArray));
 
         // return new array
-        return newArray;
+        return newArray;    
     }
 
+    /**
+     * Inverts a 2D array (each row of the 2D array is now a column, and each column is now a row)
+     * 
+     * @param arr Given 2D array to be inverted
+     * @return Inverted array
+     * @author A. Chan
+     */
+    public static int[][] invert(int[][] arr) {
+
+        // row and column variables
+        int rows = arr.length;
+        int columns = arr[0].length;
+
+        // new array to store inverted values
+        int invertedArray[][] = new int[rows][columns];
+
+        // loop through rows
+        for (int i = 0; i < rows; i++) {
+            
+            // loop through columns
+            for (int j = 0; j < columns; j++) {
+                
+                // replace element with inverted value
+                invertedArray[rows - i - 1][columns - j - 1] = arr[i][j];
+            }
+        }
+        return invertedArray;
+    }
 }
