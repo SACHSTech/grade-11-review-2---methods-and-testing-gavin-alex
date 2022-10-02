@@ -14,7 +14,8 @@ public class Utility {
 
         System.out.println(alphaWord("C:\\Users\\Tiger\\github-classroom\\SACHSTech\\grade-11-review-2---methods-and-testing-gavin-alex-andrew\\src\\gr11review\\test2\\Review2_3Test_1.txt"));
 
-        
+        seriesUp(8);
+        seriesUp(0);
     
     }
 
@@ -118,7 +119,7 @@ public class Utility {
         // outer loop, loop through numbers until n (specified num)
         for (int i = 1; i <= n; i++) {
 
-            // inner loop, iterate through loop until i (outer loop)
+            // inner loop, iterate through loop until i 
             for (int j = 1; j <= i; j++) {
 
                 // set index of array equal to j
