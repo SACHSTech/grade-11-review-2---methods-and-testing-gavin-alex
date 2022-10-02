@@ -139,24 +139,20 @@ public class Utility {
      * @author A. Chan
      */
     public static int[][] invert(int[][] arr) {
+        
+        // initialize row and column counter variables
+        int columnCount = arr[0].length;
+        int rowCount = arr.length;
 
-        // row and column variables
-        int rows = arr.length;
-        int columns = arr[0].length;
+        // create new array to store inverted values
+        int[][] result = new int[columnCount][rowCount];
 
-        // new array to store inverted values
-        int invertedArray[][] = new int[rows][columns];
-
-        // loop through rows
-        for (int i = 0; i < rows; i++) {
-            
-            // loop through columns
-            for (int j = 0; j < columns; j++) {
-                
-                // replace element with inverted value
-                invertedArray[rows - i - 1][columns - j - 1] = arr[i][j];
+        // flip rows and columns
+        for (int i = 0; i < rowCount; ++i) {
+            for (int j = 0; j < columnCount; ++j) {
+                result[j][i] = arr[i][j];
             }
         }
-        return invertedArray;
+        return result;
     }
 }
