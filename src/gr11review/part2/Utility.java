@@ -12,6 +12,8 @@ public class Utility {
         xyzMiddle("AAxyzBB");
         seriesUp(3);
 
+        System.out.println(alphaWord("C:\\Users\\Tiger\\github-classroom\\SACHSTech\\grade-11-review-2---methods-and-testing-gavin-alex-andrew\\src\\gr11review\\test2\\Review2_3Test_1.txt"));
+
         
     
     }
@@ -51,14 +53,16 @@ public class Utility {
     public static String alphaWord(String filenametxt) throws IOException {
 
         // create array list
-        ArrayList<String> str = new ArrayList<>();
+        ArrayList<String> str = new ArrayList<String>();
 
-        // read line of text file
+        // read line variable
+        String word;
+
+        // text file input
         BufferedReader reader = new BufferedReader(new FileReader(filenametxt));
-        String word = reader.readLine();
 
         // add words to array list
-        while (word != null) {
+        while ((word = reader.readLine()) != null) {
             str.add(word);
         }
         reader.close();
