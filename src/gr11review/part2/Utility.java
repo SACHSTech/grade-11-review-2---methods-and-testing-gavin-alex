@@ -323,7 +323,7 @@ public class Utility {
             System.out.println(" ");
         }
 
-        return arr2;/*  */
+        return arr2;
     }
 
     /**
