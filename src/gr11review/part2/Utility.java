@@ -32,7 +32,7 @@ public class Utility {
 *
 * @param str  The first string
 * @return int of the sum of all number characters in the string
-*
+* @author A. Young
 */
   public static int sumNumbers(String str){
   int sum = 0;
@@ -68,7 +68,7 @@ public class Utility {
 *
 * @param filenametxt The file that will be looked at 
 * @return Word with the most vowels 
-*
+* @author A. Young
 */
 
     public static String vowelCount(String filenametxt) throws IOException{
@@ -112,7 +112,7 @@ public class Utility {
 *
 * @param nums The integer array
 * @return New array with zeroes at the front
-*
+* @author A.Young
 */
     public static int [] zeroFront(int[] nums){
         int update = 0;
@@ -145,6 +145,7 @@ public class Utility {
 * @param outer  The first array
 * @param inner  The second array
 * @return true if ints in the inner array are in the outer array or false if they aren't
+* @author A. Young
 */
 
       public static boolean linearIn(int[] outer, int[] inner){
@@ -173,7 +174,7 @@ public class Utility {
 *
 * @param arr  The 2D array
 * @return Reverse content in arr
-*
+* @author A.Young
 */
 
       public static int[][] reverse(int[][] arr){
