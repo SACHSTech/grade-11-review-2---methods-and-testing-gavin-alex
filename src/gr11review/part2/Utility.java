@@ -4,12 +4,11 @@ import java.io.*;
 
 public class Utility {
   
-
     /**
-     * Given a string determine if it's x-y balanced
+     * Given a string determine if all x's have at least one y coming after them in the string
      * 
-     * @param str Given a string determine if it's x and y balanced
-     * @return if the string is x-y balanced
+     * @param str string to determine if x-y balanced
+     * @return boolean value if string is x-y balanced
      * @author G.Ge
      * 
      */
@@ -35,6 +34,7 @@ public class Utility {
                 return true;
             }
         }
+
         // Otherwise, return false.
         if (intXCount == 0){
             return true;
@@ -45,35 +45,39 @@ public class Utility {
     }
 
     /**
-     * 
      * Given a file with multiple lines of words, return the longest word
      * 
-     * @param filenametxt A given text file
+     * @param filenametxt given text file
      * @return return the longest word as a string
      * @author G.Ge
      * 
      */
 
     public static String longestWord(String filenametxt)throws IOException{
+        // Create two string variables
         String strLargest = "";
         String strCurrent;
+
+        // Initialized buffered reader and set a string equal to the first line in theh file
         BufferedReader reader = new BufferedReader(new FileReader(filenametxt));
         String line = reader.readLine();
         
+        // While the file still has words loop through the file
         while (line != null) {
+            
+            // If current word is longer than longest word, replace it
             strCurrent = line;
             if (strCurrent.length() > strLargest.length()){
                 strLargest = strCurrent;
             }
+            // Read next line
             line = reader.readLine();
         }
         reader.close();
         return strLargest;
     }
     
-    
     /**
-     * 
      * Given an array replace all '10s' with 0s at the end of the array and move all non-ten elements to the beginning
      * 
      * @param nums array of numbers to sort 
@@ -83,17 +87,16 @@ public class Utility {
      */
 
     public static int[] withoutTen(int[] nums) {
-        // Create a ccounter and new array
-        int intArrayCounter = 0;
+
+        // Create a new array and counter
+        int intCounter = 0;
         int newArr[] = new int[nums.length];
         
-
         for(int i = 0; i < nums.length; i++){
-
-            // if element in array isn't equal to 10 add to new array
+            // if element in array isn't equal to 10 add to beginning of new array
             if (nums[i] != 10){
-                newArr[intArrayCounter] = nums[i];
-                intArrayCounter++;
+                newArr[intCounter] = nums[i];
+                intCounter++;
             }
         }
         // return new array
@@ -101,7 +104,6 @@ public class Utility {
     }
    
     /**
-     * 
      * Given an array determine if you can split the array, so boths sides are equal
      * 
      * @param nums Array to be split
@@ -111,17 +113,19 @@ public class Utility {
      */
 
     public static boolean canBalance(int[] nums) {
-        // Variables for the sumes of the array from left and right
+
+        // Variables for the sums of the array from left and right
         int intSumLeft = 0;
         int intSumRight = 0;
         
+        // Get sum of array from the left side
         for(int i = 0; i < nums.length; i++){
             intSumRight = 0;
             intSumLeft += nums[i];
-
+            // Get sum of array from the right side
             for (int x = (nums.length-1); x>i; x--){
                 intSumRight += nums[x];
-
+                // If sums match and all elements in array are accounted for, return true
                 if (intSumLeft == intSumRight && x == (i+1)){
                     return true;
                 }
@@ -131,8 +135,7 @@ public class Utility {
     }
 
     /**
-     * 
-     * Given an 2d array, return an array with elements up to a certain row and column
+     * Given an 2d array, return an array with elements up to a certain row and column of the original 2d array
      * 
      * @param arr Original array
      * @param row The row to fetch up to
@@ -144,12 +147,11 @@ public class Utility {
 
     public static int[][] split(int[][] arr, int row, int col){
 
-        // Create new array up to length of row and column desured
+        // Create new array with lengths of row and column desired
         int [][] newArray = new int[row+1][col+1];
 
         for (int i = 0; i <= row; i++){
             for (int x = 0; x <= col; x++){
-
                 // Up to the row and column copy elements to new array
                 newArray[i][x] = arr[i][x];
             }
