@@ -59,7 +59,7 @@ public class UtilityTest {
     @Test
     public void alphaWordTest1() throws IOException {
         assertEquals("accompany", Utility.alphaWord(
-                "C:\\Users\\Andrew\\github-classroom\\SACHSTech\\grade-11-review-2---methods-and-testing-gavin-alex-andrew\\src\\gr11review\\test2\\Review2_3Test_1.txt"));
+                "C:\\Users\\Andrew\\github-classroom\\SACHSTech\\grade-11-review-2---methods-and-testing-gavin-alex-andrew\\src\\gr11review\\test2\\alphaWord1.txt"));
     }
 
     /**
@@ -70,7 +70,7 @@ public class UtilityTest {
     @Test
     public void alphaWordTest2() throws IOException {
         assertEquals("able", Utility.alphaWord(
-                "C:\\Users\\Andrew\\github-classroom\\SACHSTech\\grade-11-review-2---methods-and-testing-gavin-alex-andrew\\src\\gr11review\\test2\\Review2_3Test_2.txt"));
+                "C:\\Users\\Andrew\\github-classroom\\SACHSTech\\grade-11-review-2---methods-and-testing-gavin-alex-andrew\\src\\gr11review\\test2\\alphaWord2.txt"));
     }
 
     /**
@@ -81,7 +81,7 @@ public class UtilityTest {
     @Test
     public void alphaWordTest3() throws IOException {
         assertEquals("bark", Utility.alphaWord(
-                "C:\\Users\\Andrew\\github-classroom\\SACHSTech\\grade-11-review-2---methods-and-testing-gavin-alex-andrew\\src\\gr11review\\test2\\Review2_3Test_3.txt"));
+                "C:\\Users\\Andrew\\github-classroom\\SACHSTech\\grade-11-review-2---methods-and-testing-gavin-alex-andrew\\src\\gr11review\\test2\\alphaWord3.txt"));
     }
 
     /**
@@ -92,7 +92,7 @@ public class UtilityTest {
     @Test
     public void alphaWordTest4() throws IOException {
         assertEquals("acid", Utility.alphaWord(
-                "C:\\Users\\Andrew\\github-classroom\\SACHSTech\\grade-11-review-2---methods-and-testing-gavin-alex-andrew\\src\\gr11review\\test2\\Review2_3Test_4.txt"));
+                "C:\\Users\\Andrew\\github-classroom\\SACHSTech\\grade-11-review-2---methods-and-testing-gavin-alex-andrew\\src\\gr11review\\test2\\alphaWord4.txt"));
     }
 
     /**
