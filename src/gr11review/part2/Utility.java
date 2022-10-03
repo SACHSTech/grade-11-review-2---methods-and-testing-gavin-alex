@@ -3,16 +3,7 @@ package gr11review.part2;
 import java.io.*;
 
 public class Utility {
-    public static void main(String[] args)throws IOException {
-        xyBalance("xaaby");
-        longestWord("C:\\Users\\gavin\\OneDrive\\Desktop\\grade-11-review-2---methods-and-testing-gavin-alex\\src\\gr11review\\test2\\Review2_3Test_1.txt");
-        int [] array = {1, 10, 10, 2};
-        withoutTen(array);
-        int [] arrayTwo = {1, 10, 10, 2};
-        canBalance(arrayTwo);
-        int [][] arrayThree = {{1,2,3},{4,5,6},{7,8,9}};
-        split(arrayThree, 2, 2);
-    }
+  
 
     /**
      * Given a string determine if it's x-y balanced
@@ -26,28 +17,29 @@ public class Utility {
     public static boolean xyBalance(String str) {
 
         // Initialize variables for location of x and y chars
-        int intX = 0;
-        int intY = 0;
+        int intXPos = 0;
+        int intXCount = 0;
+        int intYPos = 0;
+
 
         // If index of y is greater than x, string is balanced
-        for (int i = 1; i < (str.length()) + 1; i++){
-            if (str.charAt(i - 1) == 'x'){
-                intX = i;
+        for (int i = 0; i < str.length(); i++){
+            if (str.charAt(i) == 'x'){
+                intXPos = i;
+                intXCount++;
             }
-            if (str.charAt(i - 1) == 'y'){
-                intY = i;
+            if (str.charAt(i) == 'y'){
+                intYPos = i;
             }
-            if (intY > intX){
-                System.out.println("True");
+            if (intYPos > intXPos){
                 return true;
             }
         }
         // Otherwise, return false.
-        System.out.println("False");
-        if (intX == 0){
+        if (intXCount == 0){
             return true;
         }
-        else{
+        else {
             return false;
         }
     }
@@ -67,13 +59,13 @@ public class Utility {
         String strCurrent;
         BufferedReader reader = new BufferedReader(new FileReader(filenametxt));
         String line = reader.readLine();
+        
         while (line != null) {
             strCurrent = line;
             if (strCurrent.length() > strLargest.length()){
                 strLargest = strCurrent;
             }
             line = reader.readLine();
-            System.out.print(strCurrent);
         }
         reader.close();
         return strLargest;
@@ -97,12 +89,12 @@ public class Utility {
         
 
         for(int i = 0; i < nums.length; i++){
+
             // if element in array isn't equal to 10 add to new array
             if (nums[i] != 10){
                 newArr[intArrayCounter] = nums[i];
                 intArrayCounter++;
             }
-            System.out.println(newArr[i]);
         }
         // return new array
         return newArr; 
@@ -126,15 +118,15 @@ public class Utility {
         for(int i = 0; i < nums.length; i++){
             intSumRight = 0;
             intSumLeft += nums[i];
+
             for (int x = (nums.length-1); x>i; x--){
                 intSumRight += nums[x];
+
                 if (intSumLeft == intSumRight && x == (i+1)){
-                    System.out.println("true");
                     return true;
                 }
             }
         }
-        System.out.println("false");
         return false;
     }
 
@@ -157,9 +149,9 @@ public class Utility {
 
         for (int i = 0; i <= row; i++){
             for (int x = 0; x <= col; x++){
+
                 // Up to the row and column copy elements to new array
                 newArray[i][x] = arr[i][x];
-                System.out.println(newArray[i][x]);
             }
         }
         return newArray;
