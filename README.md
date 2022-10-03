@@ -125,7 +125,7 @@ Return a version of the given array where all the 10's have been removed. The re
 ```
 withoutTen([1, 10, 10, 2]) → [1, 2, 0, 0]
 withoutTen([10, 2, 10]) → [2, 0, 0]
-withoutTen([1, 99, 10]) → [1, 99, 0]
+withoutTen([    ]) → [1, 99, 0]
 ```
 
 #### Array 2 - One Dimensional
