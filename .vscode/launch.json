@@ -9,6 +9,7 @@
             "name": "Launch Utility",
             "request": "launch",
             "mainClass": "gr11review.part2.Utility",
+<<<<<<< HEAD
             "projectName": "grade-11-review-2---methods-and-testing-gavin-alex-andrew_aa2cd52d"
         },
         {
@@ -17,6 +18,9 @@
             "request": "launch",
             "mainClass": "gr11review.part2.Utility",
             "projectName": "grade-11-review-2---methods-and-testing-gavin-alex-andrew_7dcde1f9"
+=======
+            "projectName": "grade-11-review-2---methods-and-testing-gavin-alex_ade88082"
+>>>>>>> Gavin-Code
         },
         {
             "type": "java",
